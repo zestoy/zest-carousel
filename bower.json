@@ -1,0 +1,26 @@
+{
+  "name": "zest-carousel",
+  "version": "0.0.1",
+  "homepage": "https://github.com/zestoy/zest-carousel",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  },
+  "authors": [
+    "Alper Akgun <alper.akgun@sayarus.com>"
+  ],
+  "description": "A pretty carousel",
+  "main": "zest-carousel.html",
+  "keywords": [
+    "Carousel",
+    "slider",
+    "images"
+  ]
+}
