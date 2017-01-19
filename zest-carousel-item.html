@@ -3,25 +3,32 @@
 
   <template>
 
-      <style>
-       
-      :host {
-      }
-     
-       
+    <style>
+
+     :host {
+       display: none;
+       width: 200px;
+       height: 400px;
+       position: absolute;
+       top: 0;
+       left: 0;
+     }
+
+     :host img { width: 100%; }
+
     </style>
 
     <content></content>
   </template>
 
   <script>
-  Polymer({
-       is: 'zest-carousel-item',
-       properties: {
-       },
-       listeners: {
-       }
-  });
+   Polymer({
+     is: 'zest-carousel-item',
+     properties: {
+     },
+     listeners: {
+     }
+   });
   </script>
 
 </dom-module>
