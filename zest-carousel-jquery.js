@@ -123,8 +123,9 @@
 
                  // center
                  // Don't show wrapped items.
-                 if (!options.no_wrap || (center >= 0 && center < count)) {
 
+                 if (!options.no_wrap || (center >= 0 && center < count)) {
+                   
                    el = images[wrap(center)];
                    el.style[xform] = alignment +
                      ' translateX(' + (-delta / 2) + 'px)' +
