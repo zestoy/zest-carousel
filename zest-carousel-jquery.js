@@ -27,7 +27,6 @@
 
                // Initialize
                var view = $(this);
-
                // add css styles
                this.style.overflow = 'hidden';
                this.style.position = 'relative';
