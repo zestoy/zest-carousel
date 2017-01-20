@@ -193,8 +193,7 @@
                  alignment = 'translateX(' + (carouselElement.clientWidth - item_width) / 2 + 'px) ';
                  alignment += 'translateY(' + (carouselElement.clientHeight - item_width) / 2 + 'px)';
 
-                 // center
-                 // Don't show wrapped items.
+                 // Don't show wrapped items. center
                  if (!options.no_wrap || (center >= 0 && center < count)) {
 
                    el = images[wrap(center)];
@@ -285,6 +284,7 @@
 
                function click(e) {
                  // Disable clicks if carousel was dragged.
+
                  if (dragged) {
                    e.preventDefault();
                    e.stopPropagation();
@@ -300,6 +300,7 @@
                    }
                    cycleTo(clickedIndex);
                  }
+
                }
 
                function cycleTo(n) {
@@ -363,6 +364,8 @@
                      // Vertical scrolling.
                      vertical_dragged = true;
                    }
+                 } else {
+                   dragged = false; // Alper removed the out of screen release scenario
                  }
 
                  if (dragged) {
