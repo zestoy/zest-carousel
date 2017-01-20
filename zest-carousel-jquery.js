@@ -8,7 +8,10 @@
         dist: -100, // zoom scale TODO: make this more intuitive as an option
         shift: 0, // spacing for center image
         padding: 0, // Padding between non center items
-        no_wrap: false // Don't wrap around and cycle through items.
+        no_wrap: false, // Don't wrap around and cycle through items.
+        style_carousel_item:  "display: none; width: 200px; height: 400px; position: absolute; top: 0; left: 0;",
+        style_carousel_item_img: "width: 100%",
+        style_carousel: "overflow: hidden; position: relative; width: 100%; height: 400px; perspective: 500px; transform-style: preserve-3d;transform-origin: 0% 50%"
       };
       options = $.extend(defaults, options);
 
@@ -21,6 +24,15 @@
 
         // Initialize
         var view = $(this);
+
+        // add css styles
+        this.style = options['style_carousel'];
+        view.find('.carousel-item').each(function (i) {
+          this.style = options['style_carousel_item'];
+        });
+        view.find('.carousel-item img').each(function (i) {
+          this.style = options['style_carousel_item_img'];
+        });
 
         // Don't double initialize.
         if (view.hasClass('initialized')) {
@@ -389,6 +401,3 @@
 
 }( jQuery ));
 
-  // var style_carousel_item =  "display: none; width: 200px; height: 400px; position: absolute; top: 0; left: 0;";
-  // var style_carousel_item_img = "width: 100%;";
-  // var style_carousel = "overflow: hidden; position: relative; width: 100%; height: 400px; perspective: 500px; transform-style: preserve-3d;transform-origin: 0% 50%;";
