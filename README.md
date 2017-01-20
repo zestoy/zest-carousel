@@ -1,5 +1,5 @@
 # zest-carousel
-A polymer carousel component
+A minimal pure JS carousel component with a jquery and a plain version
 
 
 ## Credits
