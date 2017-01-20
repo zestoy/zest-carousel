@@ -173,7 +173,7 @@
                                                 }
 
                                                 function scroll(x) {
-                                                  var i, half, delta, dir, tween, el, alignment, xTranslation;
+                                                  var i, half, delta, dir, tween, el, alignment;
                                                   offset = (typeof x === 'number') ? x : offset;
                                                   center = Math.floor((offset + dim / 2) / dim);
                                                   delta = offset - center * dim;
