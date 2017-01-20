@@ -36,14 +36,10 @@
         images = [];
         item_width = view.find('.carousel-item').first().innerWidth();
         dim = item_width * 2 + options.padding;
-
         view.find('.carousel-item').each(function (i) {
           images.push($(this)[0]);
         });
 
-  var style_carousel_item =  "display: none; width: 200px; height: 400px; position: absolute; top: 0; left: 0;";
-  var style_carousel_item_img = "width: 100%;";
-  var style_carousel = "overflow: hidden; position: relative; width: 100%; height: 400px; perspective: 500px; transform-style: preserve-3d;transform-origin: 0% 50%;";
 
 
         count = images.length;
@@ -102,6 +98,7 @@
           // center
           // Don't show wrapped items.
           if (!options.no_wrap || (center >= 0 && center < count)) {
+
             el = images[wrap(center)];
             el.style[xform] = alignment +
               ' translateX(' + (-delta / 2) + 'px)' +
@@ -391,3 +388,7 @@
     }; // Plugin end
 
 }( jQuery ));
+
+  // var style_carousel_item =  "display: none; width: 200px; height: 400px; position: absolute; top: 0; left: 0;";
+  // var style_carousel_item_img = "width: 100%;";
+  // var style_carousel = "overflow: hidden; position: relative; width: 100%; height: 400px; perspective: 500px; transform-style: preserve-3d;transform-origin: 0% 50%;";
