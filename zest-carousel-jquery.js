@@ -63,8 +63,8 @@
                item_width = view.find('.carousel-item').first().innerWidth();
                dim = item_width * 2 + options.padding;
                view.find('.carousel-item').each(function (i) {
-                                                 images.push($(this)[0]);
-                                               });
+                 images.push($(this)[0]);
+               });
 
 
 
@@ -100,7 +100,7 @@
                    return e.targetTouches[0].clientY;
                  }
 
-                   // mouse event
+                 // mouse event
                  return e.clientY;
                }
 
@@ -187,7 +187,7 @@
                function track() {
                  var now, elapsed, delta, v;
 
-                 now = Date.now();
+                     now = Date.now();
                  elapsed = now - timestamp;
                  timestamp = now;
                  delta = offset - frame;
@@ -200,16 +200,16 @@
                function autoScroll() {
                  var elapsed, delta;
 
-                 if (amplitude) {
-                   elapsed = Date.now() - timestamp;
-                   delta = amplitude * Math.exp(-elapsed / options.time_constant);
-                   if (delta > 2 || delta < -2) {
-                     scroll(target - delta);
-                     requestAnimationFrame(autoScroll);
-                   } else {
-                     scroll(target);
-                   }
-                 }
+                     if (amplitude) {
+                       elapsed = Date.now() - timestamp;
+                       delta = amplitude * Math.exp(-elapsed / options.time_constant);
+                       if (delta > 2 || delta < -2) {
+                         scroll(target - delta);
+                         requestAnimationFrame(autoScroll);
+                       } else {
+                         scroll(target);
+                       }
+                     }
                }
 
                function click(e) {
@@ -340,13 +340,13 @@
 
                xform = 'transform';
                ['webkit', 'Moz', 'O', 'ms'].every(function (prefix) {
-                                                   var e = prefix + 'Transform';
-                                                   if (typeof document.body.style[e] !== 'undefined') {
-                                                     xform = e;
-                                                     return false;
-                                                   }
-                                                   return true;
-                                                 });
+                                                    var e = prefix + 'Transform';
+                                                    if (typeof document.body.style[e] !== 'undefined') {
+                                                      xform = e;
+                                                      return false;
+                                                    }
+                                                    return true;
+                                                  });
 
 
 
@@ -356,37 +356,37 @@
                scroll(offset);
 
                $(this).on('carouselNext', function(e, n) {
-          if (n === undefined) {
-            n = 1;
-          }
-          target = offset + dim * n;
-          if (offset !== target) {
-            amplitude = target - offset;
-            timestamp = Date.now();
-            requestAnimationFrame(autoScroll);
-          }
-        });
+                                          if (n === undefined) {
+                                            n = 1;
+                                          }
+                                          target = offset + dim * n;
+                                          if (offset !== target) {
+                                            amplitude = target - offset;
+                                            timestamp = Date.now();
+                                            requestAnimationFrame(autoScroll);
+                                          }
+                                        });
 
-        $(this).on('carouselPrev', function(e, n) {
+               $(this).on('carouselPrev', function(e, n) {
           if (n === undefined) {
             n = 1;
           }
           target = offset - dim * n;
-          if (offset !== target) {
-            amplitude = target - offset;
-            timestamp = Date.now();
-            requestAnimationFrame(autoScroll);
-          }
+                                                        if (offset !== target) {
+                                                          amplitude = target - offset;
+                                                          timestamp = Date.now();
+                                                          requestAnimationFrame(autoScroll);
+                                                        }
         });
 
-        $(this).on('carouselSet', function(e, n) {
-          if (n === undefined) {
-            n = 0;
-          }
-          cycleTo(n);
-        });
+               $(this).on('carouselSet', function(e, n) {
+                                           if (n === undefined) {
+                                             n = 0;
+                                           }
+                                           cycleTo(n);
+                                         });
 
-      });
+             });
 
 
 
