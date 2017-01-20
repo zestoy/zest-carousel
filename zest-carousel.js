@@ -292,7 +292,7 @@
 
                  } else  {
                    var clickedIndex = index(closest(e.target, '.carousel-item'));
-                   var diff = (center % count) - clickedIndex;
+                   var diff = (((center % count) + count)  % count) - clickedIndex;
                    // Disable clicks if carousel was shifted by click
                    if (diff !== 0) {
                      e.preventDefault();
