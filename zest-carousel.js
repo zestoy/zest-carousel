@@ -346,7 +346,7 @@
                    y = ypos(e);
                    delta = reference - x;
                    deltaY = Math.abs(referenceY - y);
-                   if (deltaY < 30 && !vertical_dragged) {
+                   if (deltaY < 600 && !vertical_dragged) {
                      // If vertical scrolling don't allow dragging.
                      if (delta > 2 || delta < -2) {
                        dragged = true;
