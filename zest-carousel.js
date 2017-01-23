@@ -298,6 +298,7 @@
 			if (diff !== 0) {
 			    e.preventDefault();
 			    e.stopPropagation();
+                          return false;
 			}
 			cycleTo(clickedIndex);
                     }
@@ -305,7 +306,7 @@
 		}
 
 		function cycleTo(n) {
-                    var diff = (center % count) - n;
+                    var diff =  (((center % count) + count)  % count) - n;
                     // Account for wraparound.
                     if (!options.no_wrap) {
 			if (diff < 0) {
