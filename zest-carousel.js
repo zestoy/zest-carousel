@@ -298,7 +298,6 @@
 			if (diff !== 0) {
 			    e.preventDefault();
 			    e.stopPropagation();
-                          return false;
 			}
 			cycleTo(clickedIndex);
                     }
