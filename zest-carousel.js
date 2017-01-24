@@ -298,11 +298,10 @@
 			if (diff !== 0) {
 			    e.preventDefault();
 			    e.stopPropagation();
-                            cycleTo(clickedIndex);
                         } else {
 			    e.target.setAttribute('data-navigable',true );
                         }
-			cycleTo(clickedIndex);
+                        cycleTo(clickedIndex);
                     }
 
 		}
@@ -438,7 +437,8 @@
 
 		scroll(offset);
 
-		carouselElement.on('carouselNext', function(e, n) {
+		carouselElement.on('carouselNext', function(e) {
+                    n = e.detail[0];
                     if (n === undefined) {
 			n = 1;
                     }
@@ -450,7 +450,8 @@
                     }
 		});
 
-		carouselElement.on('carouselPrev', function(e, n) {
+		carouselElement.on('carouselPrev', function(e) {
+                    n = e.detail[0];
                     if (n === undefined) {
 			n = 1;
                     }
@@ -462,7 +463,8 @@
                     }
 		});
 
-		carouselElement.on('carouselSet', function(e, n) {
+		carouselElement.on('carouselSet', function(e) {
+                    n = e.detail[0];
                     if (n === undefined) {
 			n = 0;
                     }
