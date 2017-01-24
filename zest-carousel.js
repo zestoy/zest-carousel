@@ -285,7 +285,7 @@
 
 		function click(e) {
                     // Disable clicks if carousel was dragged.
-
+                    e.target.setAttribute('data-navigable',false );
                     if (dragged) {
 			e.preventDefault();
 			e.stopPropagation();
@@ -298,7 +298,10 @@
 			if (diff !== 0) {
 			    e.preventDefault();
 			    e.stopPropagation();
-			}
+                            cycleTo(clickedIndex);
+                        } else {
+			    e.target.setAttribute('data-navigable',true );
+                        }
 			cycleTo(clickedIndex);
                     }
 
