@@ -89,7 +89,7 @@
 
     window.ZestCarousel = {
 
-	init : function(query, options) {
+	init: function(query, options) {
 	    var defaults = {
 		time_constant: 200, // ms
 		dist: -100, // zoom scale
@@ -283,28 +283,28 @@
                     }
 		}
 
-		function click(e) {
-                    // Disable clicks if carousel was dragged.
-                    e.target.setAttribute('data-navigable',false );
+               function click(e) {
+                    // Disable clicks if carousel was dragged.                                                                                                                                  
                     if (dragged) {
-			e.preventDefault();
-			e.stopPropagation();
-			return false;
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return false;
 
                     } else  {
-			var clickedIndex = index(closest(e.target, '.carousel-item'));
-			var diff = (((center % count) + count)  % count) - clickedIndex;
-			// Disable clicks if carousel was shifted by click
+                        var carouselItem = closest(e.target, '.carousel-item');
+                        var clickedIndex = index(carouselItem);
+                        var diff = (((center % count) + count)  % count) - clickedIndex;
+                        // Disable clicks if carousel was shifted by click                                                                                                                      
 			if (diff !== 0) {
-			    e.preventDefault();
-			    e.stopPropagation();
-                        } else {
-			    e.target.setAttribute('data-navigable',true );
+                            e.preventDefault();
+                            e.stopPropagation();
+		            cycleTo(clickedIndex);
+			} else {
+                            if(options.navigate)
+                                options["navigate"](carouselItem);
                         }
-                        cycleTo(clickedIndex);
                     }
-
-		}
+                }
 
 		function cycleTo(n) {
                     var diff =  (((center % count) + count)  % count) - n;
