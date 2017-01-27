@@ -20,8 +20,9 @@
   "description": "A pretty carousel",
   "main": "zest-carousel.html",
   "keywords": [
-    "Carousel",
+    "carousel",
     "slider",
     "images"
   ]
 }
+
