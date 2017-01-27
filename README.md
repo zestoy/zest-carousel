@@ -1,5 +1,5 @@
 # zest-carousel
-A minimal pure JS carousel component with a jquery and a plain version
+A minimal pure vanilla Javascript carousel .
 
 
 ## Credits
